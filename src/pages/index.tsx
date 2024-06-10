@@ -2,13 +2,16 @@ import React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Section from "../components/section";
+
+/* overflow-y-scroll*/
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <main className="flex-1 overflow-y-scroll bg-black text-white">
-        Content
+      <main className="flex-1 bg-black text-white">
+        <Section header="Foo" body="Bar"/>
       </main>
       <Footer />
     </div>
@@ -17,4 +20,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>Jarrod West</title>;
