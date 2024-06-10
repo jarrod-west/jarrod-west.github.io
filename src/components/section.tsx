@@ -2,7 +2,7 @@ import React from "react";
 
 export type SectionProps = {
   header: string;
-  body: string;
+  html: string;
 };
 
 const Section: React.FC<SectionProps> = (props: SectionProps) => {
@@ -11,9 +11,10 @@ const Section: React.FC<SectionProps> = (props: SectionProps) => {
       <div className="font-mono text-5xl pb-10 pt-10 underline">
         {props.header}
       </div>
-      <div className="font-mono text-xl">
-        {props.body}
-      </div>
+      <div
+        className="font-mono text-xl"
+        dangerouslySetInnerHTML={{ __html: props.html }}
+      ></div>
     </div>
   );
 };

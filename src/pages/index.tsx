@@ -1,5 +1,6 @@
 import React from "react";
 import type { HeadFC, PageProps } from "gatsby";
+
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Section from "../components/section";
@@ -11,7 +12,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <div className="flex flex-col h-screen">
       <Header />
       <main className="flex-1 bg-black text-white">
-        <Section header="Foo" body="Bar"/>
+        <Section header="Foo" html="Bar" />
       </main>
       <Footer />
     </div>
