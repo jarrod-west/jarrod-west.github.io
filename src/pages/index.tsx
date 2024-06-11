@@ -5,12 +5,10 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Section from "../components/section";
 
-/* overflow-y-scroll*/
-
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage = (props: PageProps<Queries.ContentFileQuery>) => {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
+      <Header menuItems={[{ slug: "/", title: "Index" }]} />
       <main className="flex-1 bg-black text-white">
         <Section header="Foo" html="Bar" />
       </main>

@@ -1,10 +1,22 @@
 import React from "react";
+import { Link } from "gatsby";
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  menuItems: {
+    title: string;
+    slug: string;
+  }[];
+};
+
+const Header = ({ menuItems }: HeaderProps) => {
   return (
-    <header className="w-full text-center border-b border-grey p-4 sticky bg-black text-white top-0">
-      Some header
-    </header>
+    <nav className="w-full text-center border-b border-grey p-4 sticky bg-black text-white top-0">
+      <div>
+        {menuItems.map((menuItem) => (
+          <Link to={menuItem.slug}>{menuItem.title}</Link>
+        ))}
+      </div>
+    </nav>
   );
 };
 

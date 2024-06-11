@@ -1,24 +1,25 @@
 import React from "react";
-import { graphql } from "gatsby";
-import type { HeadFC, PageProps } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
+import type { HeadProps, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import Section from "../components/section";
 
 // Component to contain the markdown data
-export function PageTemplate({ data }: PageProps<Queries.ContentFileQuery>) {
+const PageTemplate = (props: PageProps<Queries.ContentFileQuery>) => {
   return (
+    // TODO: Error state
     <Layout>
       <Section
-        header={data.markdownRemark?.frontmatter?.title || "Error"}
-        html={data.markdownRemark?.html || "An error occurred"}
+        header={props.data.markdownRemark?.frontmatter?.title || "Error"}
+        html={props.data.markdownRemark?.html || "An error occurred"}
       />
     </Layout>
   );
-}
+};
 
 // GraphQL query to read the markdown content
-export const pageQuery = graphql`
+export const contentQuery = graphql`
   query ContentFile($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
@@ -32,6 +33,6 @@ export const pageQuery = graphql`
 
 export default PageTemplate;
 
-export const Head: HeadFC<Queries.ContentFileQuery> = ({ data }) => (
+export const Head = ({ data }: HeadProps<Queries.ContentFileQuery>) => (
   <title>{data.markdownRemark?.frontmatter?.title || "Error"}</title>
 );
