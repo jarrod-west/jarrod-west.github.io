@@ -1,7 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import Header from "../components/header";
+// import Header from "../components/header";
+import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer";
 
 type LayoutProps = {
@@ -35,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
       `}
       render={(data) => (
         <div className="flex flex-col h-screen">
-          <Header menuItems={menuItems(data)} />
+          <Navbar menuItems={menuItems(data)} />
           <main className="flex-1 bg-black text-white">{children}</main>
           <Footer />
         </div>
