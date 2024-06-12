@@ -1,5 +1,5 @@
 ---
-slug: "/index"
+slug: "/"
 title: "Home"
 sortOrder: 1
 ---
