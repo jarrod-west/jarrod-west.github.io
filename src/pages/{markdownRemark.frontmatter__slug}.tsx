@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import type { HeadProps, PageProps } from "gatsby";
 
 import Layout from "../components/layout";

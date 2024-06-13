@@ -1,7 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-// import Header from "../components/header";
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer";
 

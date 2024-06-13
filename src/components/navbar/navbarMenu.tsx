@@ -34,7 +34,7 @@ const NavbarMenu = ({ menuItems, closeMenu }: NavbarMenuProps) => {
             {menuItems.map((menuItem) => (
               <li className="mb-1">
                 <Link
-                  className="block p-4 text-sm font-semibold text-gray-400 hover:bg-gray-300 hover:text-black rounded"
+                  className="block p-4 text-lg font-semibold text-gray-400 hover:bg-gray-300 hover:text-black rounded"
                   to={menuItem.slug}
                   activeClassName="text-gray-700 hover:bg-gray-300 hover:text-black rounded"
                 >
